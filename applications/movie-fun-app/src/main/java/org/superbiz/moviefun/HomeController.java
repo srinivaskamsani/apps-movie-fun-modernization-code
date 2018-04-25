@@ -9,6 +9,7 @@ import org.superbiz.moviefun.movies.Movie;
 import org.superbiz.moviefun.movies.MovieFixtures;
 import org.superbiz.moviefun.movies.MoviesBean;
 
+import java.util.Arrays;
 import java.util.Map;
 
 @Controller
@@ -36,10 +37,13 @@ public class HomeController {
         for (Movie movie : movieFixtures.load()) {
             moviesBean.addMovie(movie);
         }
+        System.out.println(Arrays.toString(movieFixtures.load().toArray()));
 
         for (Album album : albumFixtures.load()) {
             albumsBean.addAlbum(album);
         }
+        System.out.println(Arrays.toString(albumFixtures.load().toArray()));
+        System.out.println(Arrays.toString(moviesBean.getMovies().toArray()));
 
         model.put("movies", moviesBean.getMovies());
         model.put("albums", albumsBean.getAlbums());
