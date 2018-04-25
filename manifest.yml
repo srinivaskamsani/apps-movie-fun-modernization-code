@@ -1,0 +1,32 @@
+---
+memory: 1G
+instances: 1
+applications:
+- name: album-service
+  path: applications/album-service/build/libs/album-service-1.1.0-SNAPSHOT.jar
+  routes:
+  - route: album-service-shiva-prateek.apps.longs.pal.pivotal.io
+  services:
+  - album-database
+  env:
+    S3_ENDPOINTURL: http://s3.amazonaws.com
+    S3_ACCESSKEY: RNMQJJ7IB4T3PKE4VKBM
+    S3_SECRETKEY: p8gRn6FRJBq4xycIoJbQQsK6w+fihm5ojiHax88q
+    S3_BUCKETNAME: moviefun
+- name: movie-service
+  path: applications/movie-service/build/libs/movie-service-1.1.0-SNAPSHOT.jar
+  routes:
+  - route: movie-service-shiva-prateek.apps.longs.pal.pivotal.io
+  services:
+  - movie-database
+- name: movie-fun-app
+  path: applications/movie-fun-app/build/libs/movie-fun-app-1.1.0-SNAPSHOT.war
+  routes:
+  - route: movie-fun-app-shiva-prateek.apps.longs.pal.pivotal.io
+  env:
+    ALBUMS_URL: http://album-service-shiva-prateek.apps.longs.pal.pivotal.io/albums
+    MOVIES_URL: http://movie-service-shiva-prateek.apps.longs.pal.pivotal.io/movies
+    S3_ENDPOINTURL: http://s3.amazonaws.com
+    S3_ACCESSKEY: RNMQJJ7IB4T3PKE4VKBM
+    S3_SECRETKEY: p8gRn6FRJBq4xycIoJbQQsK6w+fihm5ojiHax88q
+    S3_BUCKETNAME: moviefun
