@@ -1,10 +1,11 @@
 buildscript {
     ext {
-        springBootVersion = "1.4.2.RELEASE"
-        springVersion = "4.3.4.RELEASE"
-        hibernateVersion = "5.0.11.Final"
-        slf4jVersion = "1.7.21"
+        springBootVersion = "1.5.11.RELEASE"
+        springVersion = "4.3.15.RELEASE"
+        hibernateVersion = "5.0.12.Final"
+        slf4jVersion = "1.7.25"
         junitVersion = "4.12"
+        mysqlVersion = "5.1.46"
     }
 
     repositories {

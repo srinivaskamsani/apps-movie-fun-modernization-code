@@ -1,7 +1,8 @@
 package org.superbiz.moviefun.blobstore;
 
+
+import com.amazonaws.util.IOUtils;
 import org.apache.tika.Tika;
-import org.apache.tika.io.IOUtils;
 
 import java.io.File;
 import java.io.FileInputStream;

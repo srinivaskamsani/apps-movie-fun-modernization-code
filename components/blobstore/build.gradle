@@ -1,0 +1,17 @@
+apply from: "../../java.gradle"
+
+//group = "org.superbiz"
+//version = "1.1.0-SNAPSHOT"
+//description = "OpenEJB :: Web Examples :: BlobStore"
+//bootRepackage.enabled = false
+dependencies {
+//    compile project(":components:movies")
+
+//    compile "org.springframework.boot:spring-boot-starter-web"
+//    compile "org.springframework.boot:spring-boot-starter-data-jpa"
+
+//    compile "mysql:mysql-connector-java:$mysqlVersion"
+
+    compile "org.apache.tika:tika-core:1.14"
+    compile "com.amazonaws:aws-java-sdk:1.11.74"
+}
